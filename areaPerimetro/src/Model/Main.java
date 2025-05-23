@@ -7,6 +7,8 @@ public class Main {
         sq.setLado(10);
         sq.setMessage("");
 
+
+        System.out.println("SQUARE------------------------");
         System.out.println(sq.getLado());
         
         System.out.println(sq.getPerimeter());
