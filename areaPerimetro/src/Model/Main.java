@@ -9,11 +9,12 @@ public class Main {
 
 
         System.out.println("SQUARE------------------------");
-        System.out.println(sq.getLado());
         
-        System.out.println(sq.getPerimeter());
+        System.out.println("lado: " + sq.getLado());
+        
+        System.out.println("Perimetro: " + sq.getPerimeter());
         sq.getPerimeter();
-        System.out.println(sq.getArea());
+        System.out.println("Area: " + sq.getArea());
         System.out.println();
         sq.getArea();
     }
