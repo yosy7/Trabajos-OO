@@ -19,12 +19,14 @@ public class Main {
         }
 
         
-        System.out.println("\nPrueba de autenticación:");
+       
         String prueba = JOptionPane.showInputDialog("Ingrese su contraseña:");
             if (usuario.autenticar(prueba)) {
+                JOptionPane.showMessageDialog(null, "acceso concedido");
                 System.out.println("Acceso concedido");
             } else {
                 System.out.println("Acceso denegado");
+                 JOptionPane.showMessageDialog(null, "acceso denegado");
             }
     }
 }
