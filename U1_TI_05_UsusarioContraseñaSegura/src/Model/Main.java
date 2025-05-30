@@ -13,14 +13,8 @@ public class Main {
 
         if (usuario.autenticar(contrasena)) {
             System.out.println("Usuario inicializado correctamente.");
-        } else {
-            System.out.println("Error al inicializar usuario.");
-            return;
-        }
 
-        
-       
-        String prueba = JOptionPane.showInputDialog("Ingrese su contraseña:");
+            String prueba = JOptionPane.showInputDialog("Ingrese su contraseña:");
             if (usuario.autenticar(prueba)) {
                 JOptionPane.showMessageDialog(null, "acceso concedido");
                 System.out.println("Acceso concedido");
@@ -28,5 +22,13 @@ public class Main {
                 System.out.println("Acceso denegado");
                  JOptionPane.showMessageDialog(null, "acceso denegado");
             }
+        } else {
+            System.out.println("Error al inicializar usuario.");
+            return;
+        }
+
+        
+       
+        
     }
 }
