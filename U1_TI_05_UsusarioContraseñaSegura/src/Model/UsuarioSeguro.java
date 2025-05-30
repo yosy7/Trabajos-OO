@@ -18,35 +18,41 @@ public class UsuarioSeguro {
             return;
         }
 
-        boolean tieneMayuscula = false;
-        boolean tieneMinuscula = false;
-        boolean tieneDigito = false;
+        boolean mayuscula = false;
+        boolean minuscula = false;
+        boolean digito = false;
 
         for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
             if (Character.isUpperCase(c)) {
-                tieneMayuscula = true;
+                mayuscula = true;
             }
             if (Character.isLowerCase(c)) {
-                tieneMinuscula = true;
+                minuscula = true;
             }
             if (Character.isDigit(c)) {
-                tieneDigito = true;
+                digito = true;
             }
         }
 
-        if (tieneMayuscula == false) {
+        if (mayuscula == false) {
         System.out.println("La contraseña debe tener al menos una mayuscula.");
         }
-        if (tieneMinuscula == false) {
+        if (minuscula == false) {
         System.out.println("La contraseña debe tener al menos una minuscula.");
         }
-        if (tieneDigito == false) {
+        if (digito == false) {
         System.out.println("La contraseña debe tener al menos un digito.");
         }
 
 
+         if (mayuscula && minuscula && digito) {
         this.password = password;
+        
+    } else {
+        //contraseña invalida
+    }
+
     }
 
     public boolean autenticar(String intentPassword) {
