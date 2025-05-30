@@ -7,18 +7,18 @@ public class Main {
          String usuario = JOptionPane.showInputDialog("Ingrese su nombre de usuario:");
         String password = JOptionPane.showInputDialog("Ingrese su contraseña:");
 
-        UsuarioSeguro usuarioSeguro = new UsuarioSeguro();
-        usuarioSeguro.setNombreUsuario(usuario);
-        usuarioSeguro.setPassword(password);
+        UsuarioSeguro UsuarioSeguro = new UsuarioSeguro();
+        UsuarioSeguro.setNombreUsuario(usuario);
+        UsuarioSeguro.setPassword(password);
 
-        if (usuarioSeguro.autenticar(password)) {
+        if (UsuarioSeguro.password != null || UsuarioSeguro.nombreUsuario != null) {
             System.out.println("Usuario inicializado correctamente.");
         } else {
             System.out.println("Error al inicializar el usuario.");
             return;
         }
 
-        boolean acceso = usuarioSeguro.autenticar(password);
+        boolean acceso = UsuarioSeguro.autenticar("hola");
         if (acceso){
             JOptionPane.showMessageDialog(null, "Acceso concedido");
 
