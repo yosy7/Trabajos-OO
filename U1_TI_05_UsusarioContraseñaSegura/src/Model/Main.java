@@ -2,29 +2,29 @@ package Model;
 import javax.swing.JOptionPane;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
+        UsuarioSeguro usuario = new UsuarioSeguro();
 
-         String usuario = JOptionPane.showInputDialog("Ingrese su nombre de usuario:");
-        String password = JOptionPane.showInputDialog("Ingrese su contraseña:");
+        String nombre = JOptionPane.showInputDialog("Ingrese el nombre de usuario:");
+        usuario.setNombreUsuario(nombre);
 
-        UsuarioSeguro UsuarioSeguro = new UsuarioSeguro();
-        UsuarioSeguro.setNombreUsuario(usuario);
-        UsuarioSeguro.setPassword(password);
+        String contrasena = JOptionPane.showInputDialog("Ingrese la contraseña:");
+        usuario.setPassword(contrasena);
 
-        if (UsuarioSeguro.password != null || UsuarioSeguro.nombreUsuario != null) {
+        if (usuario.autenticar(contrasena)) {
             System.out.println("Usuario inicializado correctamente.");
         } else {
-            System.out.println("Error al inicializar el usuario.");
+            System.out.println("Error al inicializar usuario.");
             return;
         }
 
-        boolean acceso = UsuarioSeguro.autenticar("hola");
-        if (acceso){
-            JOptionPane.showMessageDialog(null, "Acceso concedido");
-
-        }else{
-            JOptionPane.showMessageDialog(null, "Acceso denegado");
-        }
+        
+        System.out.println("\nPrueba de autenticación:");
+        String prueba = JOptionPane.showInputDialog("Ingrese su contraseña:");
+            if (usuario.autenticar(prueba)) {
+                System.out.println("Acceso concedido");
+            } else {
+                System.out.println("Acceso denegado");
+            }
     }
-
 }
