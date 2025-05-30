@@ -8,20 +8,11 @@ public class Main {
         String nombre = JOptionPane.showInputDialog("Ingresa nombre de usuario:");
         usuario.setNombreUsuario(nombre);
 
-        String contrasena = JOptionPane.showInputDialog("Ingresa la contraseña:");
+        String contrasena = JOptionPane.showInputDialog("Ingrese la contraseña:");
         usuario.setPassword(contrasena);
 
         if (usuario.autenticar(contrasena)) {
             System.out.println("Usuario inicializado correctamente.");
-
-            String prueba = JOptionPane.showInputDialog("Ingrese su contraseña:");
-            if (usuario.autenticar(prueba)) {
-                JOptionPane.showMessageDialog(null, "acceso concedido");
-                System.out.println("Acceso concedido");
-            } else {
-                System.out.println("Acceso denegado");
-                 JOptionPane.showMessageDialog(null, "acceso denegado");
-            }
         } else {
             System.out.println("Error al inicializar usuario.");
             return;
@@ -29,6 +20,13 @@ public class Main {
 
         
        
-        
+        String prueba = JOptionPane.showInputDialog("Ingrese su contraseña:");
+            if (usuario.autenticar(prueba)) {
+                JOptionPane.showMessageDialog(null, "acceso concedido");
+                System.out.println("Acceso concedido");
+            } else {
+                System.out.println("Acceso denegado");
+                 JOptionPane.showMessageDialog(null, "acceso denegado");
+            }
     }
 }
