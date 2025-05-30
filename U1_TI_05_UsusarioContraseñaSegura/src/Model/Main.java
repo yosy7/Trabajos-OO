@@ -5,10 +5,10 @@ public class Main {
     public static void main(String[] args) {
         UsuarioSeguro usuario = new UsuarioSeguro();
 
-        String nombre = JOptionPane.showInputDialog("Ingrese el nombre de usuario:");
+        String nombre = JOptionPane.showInputDialog("Ingresa nombre de usuario:");
         usuario.setNombreUsuario(nombre);
 
-        String contrasena = JOptionPane.showInputDialog("Ingrese la contraseña:");
+        String contrasena = JOptionPane.showInputDialog("Ingresa la contraseña:");
         usuario.setPassword(contrasena);
 
         if (usuario.autenticar(contrasena)) {
