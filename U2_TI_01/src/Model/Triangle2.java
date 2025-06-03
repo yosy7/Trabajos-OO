@@ -2,12 +2,12 @@ package Model;
 
 public class Triangle2 extends FigureAbs{
 //private double base;
-    private double height;
+    //private double height;
     private double side;
 
-    public Triangle2(double base, double height, double side) {
+    public Triangle2( double side) {
         //this.base = base;
-        this.height = height;
+        //this.height = height;
         this.side = side;
     }
 
@@ -24,13 +24,13 @@ public class Triangle2 extends FigureAbs{
         this.base = base;
     }*/
 
-    public double getHeight() {
-        return height;
-    }
+    /*public double getHeight() {
+        return (Math.sqrt(3)/4)*(side);
+    }*/
 
-    public void setHeight(double height) {
-        this.height = height;
-    }
+    /*public void setHeight(double height) {
+        this.height = (Math.sqrt(3)/4)*(side);
+    }*/
 
     public double getSide() {
         return side;
@@ -42,7 +42,8 @@ public class Triangle2 extends FigureAbs{
 
     @Override
     public double getArea() {
-        return (side * height) / 2;
+        //return 1/2 *side*height;
+        return (Math.sqrt(3)/4)*(side*side);
     }
 
     @Override
